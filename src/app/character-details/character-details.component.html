@@ -1,0 +1,24 @@
+<a routerLink="..">&lt; Back to characters</a>
+
+<div *ngIf="character">
+  <h2>{{character.name}}</h2>
+
+  <div class="md-thumbnail-container">
+    <mh-thumbnail
+      [image]="character.thumbnail"
+      alt="Thumbnail of {{character.name}}"
+    ></mh-thumbnail>
+  </div>
+
+  <div *ngIf="character.description">
+    <h3>Description</h3>
+    <p>{{character.description}}</p>
+  </div>
+
+  <mh-associated-items
+    title="Comics"
+    basePath="/comics"
+    [collection]="character.comics"
+  ></mh-associated-items>
+
+</div>
